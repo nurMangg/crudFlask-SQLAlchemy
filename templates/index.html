@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{url_for('static', filename='img/Mang.png')}}" type="image/x-icon">
+    <title>CRUD FLASK</title>
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+</head>
+
+<style>
+    html, body {
+        height: 100%;
+    }
+
+    .container {
+        /* display: flex; */
+        /* text-align: center; */
+        justify-content: center;
+        align-items: center;
+        height: 97%;
+        padding: 50px;
+    }
+
+    .form {
+        padding: 15px;
+        border: 2px;
+        border-style: solid;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="form">
+            <table class="table">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Message</th>
+                    <th scope="col">Action</th>
+                </tr>
+                {% for user in users %}
+                <tr>
+                    <td scope="row">{{user.id}}</td>
+                    <td>{{user.firstName}}</td>
+                    <td>{{user.lastName}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.message}}</td>
+                    <td>
+                        <a href="/user/update/{{user.id}}" class="btn btn-primary">View</a>
+                        <a href="/user/delete/{{user.id}}" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="action mt-3">
+            <a href="{{url_for('add_data')}}" class="btn btn-primary">ADD</a>
+        </div>
+        
+    </div>
+    <footer>
+        <p class="center text-center">Copyright &copy; 2023 <span class="fst-italic"><a class="text-decoration-none" href="https://github.com/nurmangg">StudyWithMangg</a></span></p>
+    </footer>
+
+</body>
+
+</html>

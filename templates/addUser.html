@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD FLASK | Add User</title>
+
+    <link rel="shortcut icon" href="{{url_for('static', filename='img/Mang.png')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+</head>
+
+<style>
+    html,
+    body {
+        height: 100%;
+    }
+
+    .container {
+        display: flex;
+        /* text-align: center; */
+        justify-content: center;
+        align-items: center;
+        height: 97%;
+        padding: 50px;
+    }
+
+    .form {
+        padding: 15px;
+        border: 2px;
+        border-style: solid;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="form">
+            <form action="{{url_for('add_data')}}" method="POST">
+                <h1 style="font-family: monospace; margin-bottom: 15px;">CRUD FLASK SQL-ALCHEMY</h1>
+                <div class="mb-3">
+                    <label for="firstName" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="firstName" name="firstName">
+                </div>
+                <div class="mb-3">
+                    <label for="lastName" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" name="lastName">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email">
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <input type="text" class="form-control" id="message" name="message">
+                </div>
+                <button type="submit" class=" btn btn-primary">Submit</button>
+            </form>
+        </div>
+
+    </div>
+    <footer>
+        <p class="center text-center">Copyright &copy; 2023 <span class="fst-italic"><a class="text-decoration-none"
+                    href="https://github.com/nurmangg">StudyWithMangg</a></span></p>
+    </footer>
+
+</body>
+
+</html>
